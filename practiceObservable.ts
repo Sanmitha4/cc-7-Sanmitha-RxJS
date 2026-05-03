@@ -34,3 +34,13 @@ export class Observable<T>{
 }
 
 
+// asyncObservable.subscribe({
+//   next(value) {
+//     console.log('Received value observer1:', value);
+//   },
+//   error(err) {
+//     console.error('Error observer1:', err);
+//   },
+//   complete() {
+//     console.log('Async Observable completed observer1');
+//   },
