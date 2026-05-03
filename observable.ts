@@ -45,3 +45,22 @@ export class Observable<T> {
     };
   }
 }
+
+/**
+ * Create an observable that emits the provided values synchronously and then completes.
+ * Example: of(1,2,3) will emit 1, then 2, then 3, then complete.
+ */
+export function of<T>(...values: T[]): Observable<T> {
+  return new Observable<T>((observer) => {
+    try {
+      for (const v of values) {
+        observer.next(v);
+      }
+      observer.complete();
+    } catch (err) {
+      observer.error(err);
+    }
+    // no cleanup necessary for synchronous emission
+    return;
+  });
+}
