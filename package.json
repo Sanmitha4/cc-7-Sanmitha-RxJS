@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run observable:usage",
+    "run": "npm run observable:usage",
     "observable:usage": "node observable.usage.ts"
   },
   "keywords": [],
